@@ -31,8 +31,8 @@ def get_fruityvice_data(this_fruit_choice):
       fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
       return fruityvice_normalized
 
-except URLError as e:
-streamlit.error()  
+#except URLError as e:
+#streamlit.error()  
 
 # New section to display fruityvice api response
 streamlit.header("Fruityvice Fruit Advice!")
@@ -61,7 +61,7 @@ if streamlit.button('Get Fruit Load List'):
       my_data_rows = get_fruit_load_list()
       streamlit.dataframe(my_data_rows)
 
-#except URLError as e:
+except URLError as e:
   streamlit.error()  
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
